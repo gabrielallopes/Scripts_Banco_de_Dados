@@ -1,0 +1,118 @@
+.......................................................
+-------------------------------------------------------
+CLIENTES 
+
+insert into cliente (nome, turma, telCel, telFixo, email, dataNascimento) VALUES
+('João Henrique','2ºA','11 94297-4835','4511-5218','joão12henri@gmail.com','2003-09-27'),
+('Priscila Evellyn','3ºC','11 97856-2456','5297-1839','priscila345llyn@gmail.com','2000-04-12'),
+('Gabriela Domingues','1ºB','11 92963-5124','3499-2144','gabdomingues@gmail.com','2005-11-15'),
+('Christian Aguiar','3ºA','11 96326-1956','3624-8663','chris555aguiar@gmail.com','2003-10-18'),
+('Charlotte Crosby','1ºF','11 97352-9517','2954-8443','charlo88crosby@gmail.com','1999-05-12'),
+('Lucas Vaz','3ºB','11 94294-6395','7235-9675','vaz45lucas@gmail.com','2001-02-24'),
+('Bianca Martins','2ºB','11 96393-7420','6582-1953','bianca396martins@gmail.com','1998-03-13'),
+('Vitor Pelarini','3ºA','11 95392-6153','2569-3916','vitor41pela@gmail.com','2006-05-19'),
+('Marina Ciela','1ºE','11 96438-1649','6207-2381','marinaciela11@gmail.com','2002-12-10'),
+('Manuella Silva','3ºC','11 97648-2956','7345-2847','silva00manuella@gmail.com','2000-07-05'),
+('Hailey Farmiga','2ºD','11 94378-4664','8654-2853','haihai22farmiga@gmail.com','1996-08-25'),
+('Matheus Hadad','1ºA','11 92015-4734','4511-6432','hadad76stay@gmail.com','2005-06-16'),
+('Julia Martins','2ºA','11 95555-5555','4512-5923','julia11martins@gmail.com','2003-10-27'),
+('Talia Moraes','3ºC','11 97777-7777','5212-8453','talia99moraes@gmail.com','2001-05-12'),
+('Lucas Aguilar','1ºC','11 92222-2222','4567-8321','aguilar44lucas@gmail.com','2003-10-15'),
+('Bethan Lima','3ºA','11 94444-4444','3624-6432','bethan22gshore@gmail.com','1990-10-23'),
+('Yudi Duarte','1ºF','11 97542-1111','2962-7452','duarte86yudi@gmail.com','2003-10-03'),
+('Gabrielle Lauren','3ºB','11 94233-3333','7511-6228','gabrielle777lau@gmail.com','2001-02-24'),
+('Beatriz Loures','3ºB','11 96555-6666','7543-2948','beatriz33loures@gmail.com','1998-03-13'),
+('Layla Thorne','3ºA','11 95234-9643','4412-8654','lay11laythorne@gmail.com','2003-10-19');
+
+.............................................................
+-------------------------------------------------------------
+BIBLIOTECÁRIOS
+
+insert into bibliotecário (nome, telefone, email, dataNascimento, cpf, cidade, uf) VALUES
+('Maria Eduarda Pereira','11 95423-6493','maria77pereira@gmail.com','1988-10-06','333.333.333-33','São Caetano do Sul','SP'),
+('Otavio Almeida','11 94351-8462','otavioalmeida98@gmail.com','1990-12-28','111.111.111-11','São Bernardo do Sul','SP'),
+('Pedro Raphael Gomes','11 97351-8459','raphaell21pedrogomes@gmail.com','1986-05-14','999.999.999-99','Santo André','SP'),
+('Helena Garcia','11 98732-1947','helena33garcia@gmail.com','1995-03-15','555.555.555-55','São Caetano do Sul','SP'),
+('Hugo Coutinho Peixoto','11 94284-1965','coutinho8peixoto@gmail.com','1991-11-07','888.888.888-88','São Bernardo do Sul','SP'),
+('Gustav Ahr Leanos','11 94936-5106','gustav17leanos@gmail.com','1985-10-19','957.538.127-94','São Caetano do Sul','SP'),
+('Mina Winkel','11 97295-1365','mina234winkel@gmail.com','1990-12-13','234.432.123-43','São Caetano do Sul','SP');
+
+...............................................................
+--------------------------------------------------------------
+LIVROS
+
+insert into livro (titulo, genero, editora, autor) VALUES
+('O Iluminado','Terror','Doubleday','Stephen King'),
+('Laranja Mecânica','Ficção Distópica','Aleph','Anthony Burgess'),
+('Jogos Vorazes','Romance','Rocco','Suzanne Collins'),
+('Vida de Droga','Romance','Ática','Walcyr Carrasco'),
+('Jardim dos Esquecidos','Suspense','Figurati','Virginia Cleo Andrews'),
+('3096 dias','Autobiografia','Liberty','Natascha Kampusch'),
+('After','Romance','Cute','Anna Todd'),
+('Boy Erased','Drama','Yoon','Garrard Conley'),
+('Call me by your name','Romance','Arco-iris','André Aciman'),
+('Deixe a neve cair','Romance','Rocco','John Green'),
+('A Casa Torta','Terror','Intense','Agatha Christie'),
+('The Outsider','Terror','Doubleday','Stephen King'),
+('O teorema Katherine','Romance','Figurati','John Green'),
+('Madame Bovary','Romance','Liberty','Gustave Flaubert'),
+('Dom Quixote de La Mancha','Romance','Cute','Miguel Cervantes'),
+('Saco de Ossos','Terror','Doubleday','Stephen King'),
+('Insônia','Terror','Doubleday','Stephen King'),
+('Doctor Sleep','Terror','Doubleday','Stephen King'),
+('It-A coisa','Terror','Doubleday','Stephen King'),
+('O instituto','Terror','Doubleday','Stephen King') ;
+
+.............................................................
+-------------------------------------------------------------
+EMPRÉSTIMOS E DEVOLUÇÕES
+
+insert into empréstimodevolução (codFuncionario, codLivro, codCliente, dataEmprestimo, dataDevolução) VALUES
+('1','7','3','2020-04-13','2020-05-28'),
+('5','5','9','2020-05-11','2020-06-13'),
+('4','3','10','2020-03-28','2020-07-11'),
+('3','9','1','2020-05-27','2020-06-23'),
+('2','10','5','2020-04-26','2020-05-30'),
+('5','6','7','2020-05-13','2020-06-02'),
+('3','12','2','2020-02-17','2020-07-14'),
+('4','4','8','2020-05-26','2020-06-19'),
+('1','8','4','2020-04-16','2020-08-01'),
+('2','1','11','2020-05-12','2020-05-29'),
+('3','2','12','2020-04-29','2020-06-23'),
+('5','11','6','2020-05-20','2020-07-04'),
+('7','13','15','2020-06-05','2020-08-28'),
+('6','17','18','2020-05-18','2020-06-17'),
+('4','14','20','2020-05-28','2020-07-02'),
+('7','18','13','2020-06-01','2020-06-28'),
+('6','15','16','2020-04-12','2020-06-10'),
+('7','19','14','2020-06-03','2020-06-19'),
+('3','16','17','2020-02-27','2020-07-01'),
+('6','20','19','2020-05-12','2020-06-07');
+...............................................................
+---------------------------------------------------------------
+
+alter table livro add column paginas int;
+alter table livro add column qtdeExemplares int;
+
+...............................................................
+---------------------------------------------------------------
+update livro set paginas = 175, qtdeExemplares = 5 where codLivro = 1; 
+update livro set paginas = 294, qtdeExemplares = 7 where codLivro = 2; 
+update livro set paginas = 154, qtdeExemplares = 10 where codLivro = 3; 
+update livro set paginas = 350, qtdeExemplares = 13 where codLivro = 4; 
+update livro set paginas = 467, qtdeExemplares = 3 where codLivro = 5; 
+update livro set paginas = 124, qtdeExemplares = 8 where codLivro = 6; 
+update livro set paginas = 280, qtdeExemplares = 20 where codLivro = 7; 
+update livro set paginas = 560, qtdeExemplares = 17 where codLivro = 8; 
+update livro set paginas = 375, qtdeExemplares = 9 where codLivro = 9; 
+update livro set paginas = 288, qtdeExemplares = 21 where codLivro = 10; 
+update livro set paginas = 315, qtdeExemplares = 15 where codLivro = 11; 
+update livro set paginas = 400, qtdeExemplares = 4 where codLivro = 12; 
+update livro set paginas = 273, qtdeExemplares = 22 where codLivro = 13; 
+update livro set paginas = 190, qtdeExemplares = 14 where codLivro = 14; 
+update livro set paginas = 587, qtdeExemplares = 2 where codLivro = 15; 
+update livro set paginas = 631, qtdeExemplares = 19 where codLivro = 16; 
+update livro set paginas = 573, qtdeExemplares = 14 where codLivro = 17; 
+update livro set paginas = 430, qtdeExemplares = 11 where codLivro = 18; 
+update livro set paginas = 520, qtdeExemplares = 13 where codLivro = 19; 
+update livro set paginas = 642, qtdeExemplares = 6 where codLivro = 20; 

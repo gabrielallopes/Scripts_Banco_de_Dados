@@ -1,0 +1,118 @@
+CREATE DATABASE farmacia;
+
+use farmacia;
+
+CREATE TABLE caixaatendente (
+codAtendente int PRIMARY KEY auto_increment,
+nome varchar(255) not null,
+cpf varchar(255) not null unique,
+telFixo varchar(255) null,
+telCel varchar(255) not null,
+salario decimal (7,2) not null,
+email varchar(255) not null unique,
+rg varchar(255) not null unique
+);
+
+
+CREATE TABLE produtoremédio (
+codProduto int PRIMARY KEY auto_increment,
+nome varchar(255) not null,
+fabricante varchar(255) not null,
+generico bit,
+preco decimal (7,2) not null,
+quantidade int not null
+);
+
+
+CREATE TABLE compravenda (
+codCompraVenda int PRIMARY KEY auto_increment,
+hora time not null,
+total decimal (7,2) not null,
+data date not null,
+cpf varchar(255) not null unique,
+codAtendente int not null,
+FOREIGN KEY(codAtendente) REFERENCES caixaatendente (codAtendente)
+);
+
+
+CREATE TABLE itenscompra (
+quantidade int not null,
+totalUnit decimal (7,2) not null,
+codProduto int not null,
+codCompraVenda int not null,
+FOREIGN KEY(codProduto) REFERENCES produtoremédio (codProduto),
+FOREIGN KEY(codCompraVenda) REFERENCES compravenda (codCompraVenda)
+);
+
+
+---------------------------------------------------------------------------------------------------------
+---------------------------------------INSERTS FARMACIA--------------------------------------------------
+
+insert into caixaatendente (nome, cpf, rg, email, telCel, salario) VALUES
+("Felipe Micaela","555.888.333-77","44.222.999-5","felipe22micaela@gmail.com","11 96743-1739", 25.000),
+("Gabriela Abdala","666.999.444-88","55.333.000-6","gabi199abdala@gmail.com","11 93956-4519", 20.000),
+("Lucas Guedez","777.000.555-99","66.444.111-7","lucas33guedez@gmail.com","11 95294-2814", 10.000),
+("Gessica Kayane","888.111.666-00","77.555.222-8","gkayane11ca@gmail.com","11 95403-4163", 30.000),
+("Eric Borges","999.222.777-11","88.666.333-9","eric78borges@gmail.com","11 95395-2941", 15.000),
+("Bel Alves","111.333.888-22","99.333.000-4","bela22alves@gmail.com","11 96294-1932", 26.000),
+("Luana Coutto","222.444.999-33","55.333.888-5","luana28coutto@gmail.com","11 94295-1845", 12.000);
+
+
+insert into produtoremédio (nome, fabricante, generico, preco, quantidade) VALUES
+("Desodorante","Above",null,9.90,55),
+("Ibuprofeno","Medley",1,5.00,110),
+("Fluoxetina","Eurofarma",0,19.90,80),
+("Advil","Takeda",0,4.00,120),
+("Sabonete","Phebo",null,5.50,60),
+("Metformina","Eurofarma",0,17.00,40),
+("Pomada para assadura","Hipoglos",null,25.50,35),
+("Nimesulida","Medley",1,6.00,110),
+("Cimegripe","Aché",1,4.00,150),
+("Protetor Solar","Sunshine",null,35.00,50),
+("Citalopram","Eurofarma",0,18.00,75),
+("Codex","Aché",0,9.00,100),
+("Dipirona","Bayer",1,5.00,210),
+("Hidratante Corporal","CeraVe",null,39.90,50),
+("Epocler","Takeda",0,3.00,250),
+("Manteiga de Cacau","Naturavene",null,8.50,85),
+("Água Termal","Vichy",null,27.50,40);
+
+
+insert into compravenda (codAtendente, cpf, data, hora, total) VALUES
+(1,"111.333.222-55","2020-06-05","10:34:18",82.50),
+(2,"222.666.777-11","2020-06-12","14:12:36",178.50),
+(3,"333.444.639-99","2020-06-05","08:24:06",27.00),
+(4,"622.539.419-33","2020-05-18","19:42:29",598.50),
+(5,"320.103.235-63","2020-06-11","13:35:01",40.00),
+(6,"520.140.249-77","2020-05-29","05:44:16",162.00),
+(7,"153.175.556-94","2020-06-10","15:30:49",180.00),
+(1,"549.788.368-51","2020-05-14","12:50:13",770.00),
+(2,"302.022.662-23","2020-06-04","16:08:45",20.00),
+(3,"592.149.513-93","2020-06-15","21:17:11",54.00),
+(4,"823.556.903-49","2020-06-07","09:20:47",280.50),
+(5,"254.368.678-62","2020-05-23","18:34:00",408.00),
+(6,"140.632.940-18","2020-05-11","23:00:02",33.00),
+(7,"175.249.655-42","2020-06-17","11:42:53",52.00),
+(1,"788.513.498-59","2020-05-27","17:20:15",398.00),
+(2,"230.903.302-23","2020-06-12","20:35:13",150.00),
+(3,"754.678.152-44","2020-06-01","22:57:03",227.70);
+
+
+insert into itenscompra (codCompraVenda, CodProduto, quantidade, totalUnit) VALUES
+(1,17,3,82.50),
+(2,16,21,178.50),
+(3,15,9,27.00),
+(4,14,15,598.50),
+(5,13,8,40.00),
+(6,12,18,162.00),
+(7,11,10,180.00),
+(8,10,22,770.00),
+(9,9,5,20.00),
+(10,8,9,54.00),
+(11,7,11,280.50),
+(12,6,24,408.00),
+(13,5,6,33.00),
+(14,4,13,52.00),
+(15,3,20,398.00),
+(16,2,30,150.00),
+(17,1,23,227.70);
