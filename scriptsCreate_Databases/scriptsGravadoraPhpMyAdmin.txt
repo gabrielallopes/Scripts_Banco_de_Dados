@@ -1,0 +1,58 @@
+create database gravadora;
+
+use gravadora;
+
+CREATE TABLE artista_banda (
+codArt int PRIMARY KEY auto_increment,
+nome varchar(255),
+telefone varchar(255),
+email varchar(255) unique,
+estilo varchar(255),
+cidade varchar(255),
+uf char(2),
+empresario varchar(255),
+qtdeInte int
+);
+
+CREATE TABLE integrantes (
+codIntegrantes int PRIMARY KEY auto_increment,
+nome varchar(255)
+);
+
+
+CREATE TABLE musica (
+codMusica int PRIMARY KEY auto_increment,
+duracao varchar(255),
+estilo varchar(255),
+nome varchar(255)
+);
+
+CREATE TABLE compositores (
+codComp int PRIMARY KEY auto_increment,
+nome varchar(255),
+telefone varchar(255),
+email varchar(255) unique,
+cpf varchar(255) unique
+);
+
+CREATE TABLE possue (
+codIntegrantes int,
+codArt int,
+FOREIGN KEY(codArt) REFERENCES artista_banda (codArt)
+);
+
+
+CREATE TABLE canta (
+codArt int,
+codMusica int,
+FOREIGN KEY(codArt) REFERENCES artista_banda (codArt)
+);
+
+CREATE TABLE escreve (
+codMusica int,
+codComp int,
+FOREIGN KEY(codMusica) REFERENCES musica (codMusica),
+FOREIGN KEY(codComp) REFERENCES compositores (codComp)
+);
+
+

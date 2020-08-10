@@ -1,0 +1,78 @@
+create database veter;
+
+use veter;
+
+CREATE TABLE dono (
+codDono int PRIMARY KEY auto_increment,
+nome varchar(150),
+email varchar(150) unique,
+cpf varchar(150) unique,
+telFixo varchar(150),
+rg varchar(150) unique,
+telCel varchar(150),
+logradouro varchar(150),
+num int,
+complemento varchar(150),
+bairro varchar(150),
+cidade varchar(150),
+uf char(2),
+cep varchar(150)
+);
+
+CREATE TABLE animal (
+codAnimal int PRIMARY KEY auto_increment,
+peso decimal (7,2),
+raça varchar(150),
+cor varchar(150),
+sexo varchar(150),
+especie varchar(150),
+codDono int,
+FOREIGN KEY(codDono) REFERENCES dono (codDono)
+);
+
+CREATE TABLE veterinario (
+codVet int PRIMARY KEY auto_increment,
+telFixo varchar(150),
+crmv varchar(150) unique,
+cpf varchar(150) unique,
+nome varchar(150),
+email varchar(150) unique,
+telCel varchar(150),
+complemento varchar(150),
+cep varchar(150),
+cidade varchar(150),
+uf char(2),
+bairro varchar(150),
+logradouro varchar(150),
+numero int
+);
+
+
+CREATE TABLE atendente (
+codAtend int PRIMARY KEY auto_increment,
+nome varchar(150),
+email varchar(150) unique,
+telFixo varchar(150),
+rg varchar(150) unique,
+cpf varchar(150) unique,
+telCel varchar(150)
+);
+
+
+CREATE TABLE consulta_agenda (
+codCons int PRIMARY KEY auto_increment,
+data date,
+diagnostico varchar(255),
+preco decimal (7,2),
+hora time,
+codDono int,
+codAnimal int,
+codAtend int,
+codVet int,
+FOREIGN KEY(codDono) REFERENCES dono (codDono),
+FOREIGN KEY(codAnimal) REFERENCES animal (codAnimal),
+FOREIGN KEY(codAtend) REFERENCES atendente (codAtend),
+FOREIGN KEY(codVet) REFERENCES veterinario (codVet)
+);
+
+
