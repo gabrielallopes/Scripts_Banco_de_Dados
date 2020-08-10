@@ -1,0 +1,14 @@
+CREATE DATABASE concessionaria; 
+USE concessionaria;
+CREATE TABLE veiculo(
+    codVeiculo INT PRIMARY KEY AUTO_INCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    anoFabricacao INT,
+    anoModelo INT,
+    combustivel CHAR(1)); 
+ALTER TABLE veiculo ADD COLUMN valor decimal(7,2);
+ALTER TABLE veiculo ADD COLUMN motor varchar(50);
+ALTER TABLE veiculo DROP COLUMN motor;
+DROP TABLE veiculo;
+DROP DATABASE concessionaria;
