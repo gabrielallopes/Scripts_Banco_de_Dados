@@ -1,0 +1,377 @@
+Microsoft Windows [versão 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation. Todos os direitos reservados.
+
+C:\Users\User>cd..
+
+C:\Users>cd..
+
+C:\>cd xampp
+
+C:\xampp>cd mysql
+
+C:\xampp\mysql>cd bin
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 94
+Server version: 10.4.11-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+---------------------------------------------------------------------
+------------------------COMANDOS DDL---------------------------------
+---------------------------------------------------------------------
+
+MariaDB [(none)]> create database redacao;
+Query OK, 1 row affected (0.005 sec)
+
+MariaDB [(none)]> use redacao;
+Database changed
+MariaDB [redacao]> create table aluno(
+    -> codAluno int primary key auto_increment);
+Query OK, 0 rows affected (0.613 sec)
+
+MariaDB [redacao]> show tables;
++-------------------+
+| Tables_in_redacao |
++-------------------+
+| aluno             |
++-------------------+
+1 row in set (0.002 sec)
+
+MariaDB [redacao]> describe aluno;
++----------+---------+------+-----+---------+----------------+
+| Field    | Type    | Null | Key | Default | Extra          |
++----------+---------+------+-----+---------+----------------+
+| codAluno | int(11) | NO   | PRI | NULL    | auto_increment |
++----------+---------+------+-----+---------+----------------+
+1 row in set (0.041 sec)
+
+MariaDB [redacao]> create database biblioteca;
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [redacao]> create database recursoshumanos;
+Query OK, 1 row affected (0.003 sec)
+
+MariaDB [redacao]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| biblioteca         |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| recursoshumanos    |
+| redacao            |
+| test               |
++--------------------+
+8 rows in set (0.004 sec)
+
+MariaDB [redacao]> use biblioteca;
+Database changed
+MariaDB [biblioteca]> create table livro(
+    -> idlivro int primary key auto_increment,
+    -> livro varchar(255),
+    -> autor varchar(255));
+Query OK, 0 rows affected (0.613 sec)
+
+MariaDB [biblioteca]> describe livro;
++---------+--------------+------+-----+---------+----------------+
+| Field   | Type         | Null | Key | Default | Extra          |
++---------+--------------+------+-----+---------+----------------+
+| idlivro | int(11)      | NO   | PRI | NULL    | auto_increment |
+| livro   | varchar(255) | YES  |     | NULL    |                |
+| autor   | varchar(255) | YES  |     | NULL    |                |
++---------+--------------+------+-----+---------+----------------+
+3 rows in set (0.014 sec)
+
+MariaDB [biblioteca]> create database veterinaria;
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [biblioteca]> use veterinaria;
+Database changed
+MariaDB [veterinaria]> create table animal(
+    -> idAnimal int primary key auto_increment,
+    -> nomeAnimal varchar(255),
+    -> raca varchar(255));
+Query OK, 0 rows affected (0.193 sec)
+
+MariaDB [veterinaria]> show tables;
++-----------------------+
+| Tables_in_veterinaria |
++-----------------------+
+| animal                |
++-----------------------+
+1 row in set (0.002 sec)
+
+MariaDB [veterinaria]> describe animal;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| idAnimal   | int(11)      | NO   | PRI | NULL    | auto_increment |
+| nomeAnimal | varchar(255) | YES  |     | NULL    |                |
+| raca       | varchar(255) | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+3 rows in set (0.014 sec)
+
+MariaDB [veterinaria]> create database farmacia;
+Query OK, 1 row affected (0.003 sec)
+
+MariaDB [veterinaria]> use farmacia;
+Database changed
+MariaDB [farmacia]> create table cliente(
+    -> rua varchar(255),
+    -> numero varchar(255),
+    -> complemento varchar(255),
+    -> bairro varchar(255),
+    -> cidade varchar(255),
+    -> ud char(2),
+    -> CEP varchar(255),
+    -> nome varchar(255),
+    -> email varchar(255),
+    -> dataNascimento date,
+    -> rg varchar(255),
+    -> cpf varchar(200) unique,
+    -> cnh varchar(200) unique,
+    -> telefone varchar(100),
+    -> codCliente int primary key auto_increment);
+Query OK, 0 rows affected (0.553 sec)
+
+MariaDB [farmacia]> show tables;
++--------------------+
+| Tables_in_farmacia |
++--------------------+
+| cliente            |
++--------------------+
+1 row in set (0.002 sec)
+
+MariaDB [farmacia]> describe cliente;
++----------------+--------------+------+-----+---------+----------------+
+| Field          | Type         | Null | Key | Default | Extra          |
++----------------+--------------+------+-----+---------+----------------+
+| rua            | varchar(255) | YES  |     | NULL    |                |
+| numero         | varchar(255) | YES  |     | NULL    |                |
+| complemento    | varchar(255) | YES  |     | NULL    |                |
+| bairro         | varchar(255) | YES  |     | NULL    |                |
+| cidade         | varchar(255) | YES  |     | NULL    |                |
+| ud             | char(2)      | YES  |     | NULL    |                |
+| CEP            | varchar(255) | YES  |     | NULL    |                |
+| nome           | varchar(255) | YES  |     | NULL    |                |
+| email          | varchar(255) | YES  |     | NULL    |                |
+| dataNascimento | date         | YES  |     | NULL    |                |
+| rg             | varchar(255) | YES  |     | NULL    |                |
+| cpf            | varchar(200) | YES  | UNI | NULL    |                |
+| cnh            | varchar(200) | YES  | UNI | NULL    |                |
+| telefone       | varchar(100) | YES  |     | NULL    |                |
+| codCliente     | int(11)      | NO   | PRI | NULL    | auto_increment |
++----------------+--------------+------+-----+---------+----------------+
+15 rows in set (0.014 sec)
+
+MariaDB [farmacia]> use biblioteca;
+Database changed
+MariaDB [biblioteca]> drop database biblioteca;
+Query OK, 1 row affected (0.028 sec)
+
+MariaDB [(none)]> use veterinaria;
+Database changed
+MariaDB [veterinaria]> rename table animal to animais;
+Query OK, 0 rows affected (0.024 sec)
+
+MariaDB [veterinaria]> show tables;
++-----------------------+
+| Tables_in_veterinaria |
++-----------------------+
+| animais               |
++-----------------------+
+1 row in set (0.002 sec)
+
+MariaDB [veterinaria]> alter table animais add column corpele varchar(255);
+Query OK, 0 rows affected (0.033)
+Records: 0 Duplicates: 0 Warnings: 0
+
+
+MariaDB [veterinaria]> describe animais;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| idAnimal   | int(11)      | NO   | PRI | NULL    | auto_increment |
+| nomeAnimal | varchar(255) | YES  |     | NULL    |                |
+| raca       | varchar(255) | YES  |     | NULL    |                |
+| corpele    | varchar(255) | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.020 sec)
+
+MariaDB [veterinaria]> alter table animais drop column corpele;
+Query OK, 0 rows affected (0.025 sec)
+Records: 0 Duplicates: 0 Warnings: 0
+
+MariaDB [veterinaria]> describe animais;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| idAnimal   | int(11)      | NO   | PRI | NULL    | auto_increment |
+| nomeAnimal | varchar(255) | YES  |     | NULL    |                |
+| raca       | varchar(255) | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+3 rows in set (0.014 sec)
+
+MariaDB [veterinaria]> drop database veterinaria;
+Query OK, 2 rows affected (0.435 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| biblioteca         |
+| concessionaria     |
+| concessionária     |
+| farmacia           |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| recursoshumanos    |
+| redacao            |
+| test               |
++--------------------+
+11 rows in set (0.004 sec)
+
+MariaDB [(none)]> create database veterinaria;
+Query OK, 1 row affected (0.003 sec)
+
+MariaDB [(none)]> use veterinaria;
+Database changed
+MariaDB [veterinaria]> create table dono(
+    -> coddono int PRIMARY KEY AUTO_INCREMENT,
+    -> nome varchar(255),
+    -> cpf varchar(20) unique,
+    -> telefone varchar(20));
+Query OK, 0 rows affected (0.264 sec)
+
+MariaDB [veterinaria]> create table animal(
+    -> idanimal int PRIMARY KEY AUTO_INCREMENT,
+    -> nome varchar(255),
+    -> raca varchar(255),
+    -> peso decimal(7,2),
+    -> dono int,
+    -> FOREIGN KEY(dono)references dono(coddono));
+Query OK, 0 rows affected (0.244 sec)
+
+---------------------------------------------------------------------
+------------------------COMANDOS DML---------------------------------
+---------------------------------------------------------------------
+
+MariaDB [veterinaria]> insert into dono (nome, cpf, telefone) VALUES
+    -> ('Maria Ferraz','364.564.725.79','11-4511-5218'),
+    -> ('João Vitor','532.547.284.65','11-8734-6543'),
+    -> ('Amélia Lopes','493.621.597.94','11-9574-2145');
+Query OK, 3 rows affected (0.062 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+MariaDB [veterinaria]> insert into dono VALUES
+    -> ('','Julia Almeida','356.239.743.54','11-7845-2572'),
+    -> ('','Carlos Alberto','234.574.194.83','11-3249-5409');
+Query OK, 2 rows affected, 2 warnings (0.086 sec)
+Records: 2  Duplicates: 0  Warnings: 2
+
+MariaDB [veterinaria]> insert into animal(nome,peso,raca,dono) VALUES
+    -> ('Rex',19.5,'Golden retriever',3),
+    -> ('Zeus',40,'Pastor-alemão',1),
+    -> ('Tobby',49,'Labrador',1),
+    -> ('Jimmy',22,'Buldogue',2),
+    -> ('Cacau',4,'Schnauzer',1),
+    -> ('Cristal',17,'Vira lata',4),
+    -> ('Milo',6,'Siamês',5);
+Query OK, 7 rows affected (0.376 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+MariaDB [veterinaria]> alter table animal add column tipoAnimal varchar(255);
+Query OK, 0 rows affected (0.146 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [veterinaria]> update animal set tipoAnimal= 'Cachorro' where idanimal=
+1;
+Query OK, 1 row affected (0.080 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [veterinaria]> update animal set tipoAnimal= 'Cachorro' where idanimal=
+2;
+Query OK, 1 row affected (0.056 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [veterinaria]> update animal set tipoAnimal= 'Cachorro' where idanimal=
+3;
+Query OK, 1 row affected (0.345 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [veterinaria]> update animal set tipoAnimal= 'Cachorro' where idanimal=
+4;
+Query OK, 1 row affected (0.069 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [veterinaria]> update animal set tipoAnimal= 'Cachorro' where idanimal=
+5;
+Query OK, 1 row affected (0.077 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [veterinaria]> update animal set tipoAnimal= 'Gato' where idanimal= 6;
+Query OK, 1 row affected (0.047 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [veterinaria]> update animal set tipoAnimal= 'Gato' where idanimal= 7;
+Query OK, 1 row affected (0.039 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [veterinaria]> update animal set peso= 3.5 where idanimal= 6;
+Query OK, 1 row affected (0.062 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [veterinaria]> update animal set raca= "Sem raça definida" where raca= "
+Vira lata";
+Query OK, 1 row affected (0.079 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [veterinaria]> update animal set peso= 46 where nome= "Tobby";
+Query OK, 1 row affected (0.436 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [veterinaria]> delete from animal where nome= "Cacau";
+Query OK, 1 row affected (0.070 sec)
+
+MariaDB [veterinaria]> show tables;
++-----------------------+
+| Tables_in_veterinaria |
++-----------------------+
+| animal                |
+| dono                  |
++-----------------------+
+2 rows in set (0.003 sec)
+
+MariaDB [veterinaria]> describe animal;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| idanimal   | int(11)      | NO   | PRI | NULL    | auto_increment |
+| nome       | varchar(255) | YES  |     | NULL    |                |
+| raca       | varchar(255) | YES  |     | NULL    |                |
+| peso       | decimal(7,2) | YES  |     | NULL    |                |
+| dono       | int(11)      | YES  | MUL | NULL    |                |
+| tipoAnimal | varchar(255) | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.009 sec)
+
+MariaDB [veterinaria]> describe dono;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| coddono  | int(11)      | NO   | PRI | NULL    | auto_increment |
+| nome     | varchar(255) | YES  |     | NULL    |                |
+| cpf      | varchar(20)  | YES  | UNI | NULL    |                |
+| telefone | varchar(20)  | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+4 rows in set (0.009 sec)
+
+MariaDB [veterinaria]>
